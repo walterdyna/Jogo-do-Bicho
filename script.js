@@ -1,10 +1,12 @@
 const animals = ["tigre", "leão", "elefante", "galo", "cobra", "urso"];
-let wallet = 100; // Saldo inicial
+let wallet = 0; // Saldo inicial definido pelo usuário
 
 const betAnimal = document.getElementById("betAnimal");
 const betAmount = document.getElementById("betAmount");
 const placeBetButton = document.getElementById("placeBet");
 const drawButton = document.getElementById("draw");
+const reloadForm = document.getElementById("reloadForm");
+const reloadAmount = document.getElementById("reloadAmount");
 const drawnAnimalDiv = document.getElementById("drawnAnimal");
 const playerResultDiv = document.getElementById("playerResult");
 const walletDiv = document.getElementById("wallet");
@@ -12,6 +14,19 @@ const walletDiv = document.getElementById("wallet");
 walletDiv.textContent = `Saldo: R$${wallet.toFixed(2)}`;
 
 let currentBet = { animal: null, amount: 0 };
+
+reloadForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const amount = parseFloat(reloadAmount.value);
+  if (amount && amount > 0) {
+    wallet += amount;
+    walletDiv.textContent = `Saldo: R$${wallet.toFixed(2)}`;
+    reloadAmount.value = "";
+    placeBetButton.disabled = false;
+  } else {
+    alert("Por favor, insira um valor válido para recarregar.");
+  }
+});
 
 placeBetButton.addEventListener("click", () => {
   const selectedAnimal = betAnimal.value;
@@ -49,7 +64,6 @@ drawButton.addEventListener("click", () => {
 
   if (wallet <= 0) {
     playerResultDiv.textContent = "Você ficou sem saldo! Recarregue para continuar jogando.";
-    drawButton.disabled = true;
     placeBetButton.disabled = true;
   }
 
