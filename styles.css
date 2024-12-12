@@ -20,6 +20,7 @@ body {
     max-width: 500px;
     text-align: center;
     animation: fadeIn 1s ease-in-out;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
   }
   
   h1 {
@@ -46,6 +47,7 @@ body {
     border: 2px solid #ddd;
     border-radius: 5px;
     font-size: 1rem;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
   }
   
   button {
@@ -61,7 +63,8 @@ body {
     border-radius: 8px;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); 
+}
   
   button:disabled {
     background: #ccc;
@@ -94,6 +97,10 @@ body {
     text-decoration: none;
     color: #4a4a4a;
     cursor: pointer;
+    margin-top: 5px;
+    padding: 3px;
+    border-radius: 3px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
   
   /* Responsividade */
