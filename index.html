@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo do Bicho Avançado</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Jogo do Bicho Avançado</h1>
+  <div id="game">
+    <h2>Aposte no seu Animal</h2>
+    <form id="betForm">
+      <label for="betAnimal">Escolha um animal:</label>
+      <select id="betAnimal">
+        <option value="tigre">Tigre</option>
+        <option value="leão">Leão</option>
+        <option value="elefante">Elefante</option>
+        <option value="galo">Galo</option>
+        <option value="cobra">Cobra</option>
+        <option value="urso">Urso</option>
+      </select>
+      <label for="betAmount">Valor da aposta:</label>
+      <input type="number" id="betAmount" min="1" placeholder="Digite o valor">
+      <button type="button" id="placeBet">Fazer Aposta</button>
+    </form>
+    <button id="draw" disabled>Sortear</button>
+    <div id="results">
+      <h3>Resultado:</h3>
+      <div id="drawnAnimal"></div>
+      <div id="playerResult"></div>
+      <div id="wallet"></div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
