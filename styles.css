@@ -98,6 +98,7 @@ body {
     color: #4a4a4a;
     cursor: pointer;
     margin-top: 5px;
+    margin-left: 35%;
     padding: 3px;
     border-radius: 3px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
